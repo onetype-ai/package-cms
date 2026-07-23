@@ -1,4 +1,4 @@
-onetype.AddonReady('ui.layouts', (layouts) =>
+onetype.AddonReady('admin.layouts', (layouts) =>
 {
     layouts.Item({
         id: 'cms-content-empty',
@@ -17,7 +17,7 @@ onetype.AddonReady('ui.layouts', (layouts) =>
         {
             return `
                 <div class="ot-flex-vertical ot-flex-1 ot-container-s ot-py-l">
-                    <e-status-empty icon="database" title="No collection selected" description="Pick a collection from the sidebar to browse and edit its entries."></e-status-empty>
+                    <e-admin-status-empty icon="database" title="No collection selected" description="Pick a collection from the sidebar to browse and edit its entries."></e-admin-status-empty>
                 </div>
             `;
         }

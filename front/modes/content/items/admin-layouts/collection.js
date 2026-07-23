@@ -1,4 +1,4 @@
-onetype.AddonReady('ui.layouts', (layouts) =>
+onetype.AddonReady('admin.layouts', (layouts) =>
 {
     layouts.Item({
         id: 'cms-content-collection',
@@ -30,7 +30,7 @@ onetype.AddonReady('ui.layouts', (layouts) =>
 
             this.pick = ({ value }) =>
             {
-                $ot.ui.screens.open('cms.collection', { collection: this.cmsCollection, view: value });
+                $ot.admin.screens.open('cms.collection', { collection: this.cmsCollection, view: value });
             };
 
             this.stage = () =>
@@ -41,7 +41,7 @@ onetype.AddonReady('ui.layouts', (layouts) =>
             return `
                 <div class="ot-flex-vertical ot-gap-m ot-p-m">
                     <div class="ot-flex-end">
-                        <e-navigation-tabs tone="contained" :items="views" :active="cmsContentView" :_change="pick"></e-navigation-tabs>
+                        <e-admin-navigation-tabs tone="contained" :items="views" :active="cmsContentView" :_change="pick"></e-admin-navigation-tabs>
                     </div>
                     <div class="ot-flex-1 ot-scrollbar">
                         <div ot-node="stage()" :ot-key="cmsContentView"></div>

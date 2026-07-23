@@ -1,4 +1,4 @@
-onetype.AddonReady('modules.settings', (settings) =>
+onetype.AddonReady('platform.settings', (settings) =>
 {
     settings.Item({
         id: 'cms.content.filters',

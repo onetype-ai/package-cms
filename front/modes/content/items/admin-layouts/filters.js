@@ -1,4 +1,4 @@
-onetype.AddonReady('ui.layouts', (layouts) =>
+onetype.AddonReady('admin.layouts', (layouts) =>
 {
     layouts.Item({
         id: 'cms-content-filters',
@@ -17,19 +17,19 @@ onetype.AddonReady('ui.layouts', (layouts) =>
         {
             this.back = () =>
             {
-                $ot.ui.screens.open('cms.content');
+                $ot.admin.screens.open('cms.content');
             };
 
             this.change = ({ value }) =>
             {
-                $ot.modules.settings.set('cms.content.filters', value);
+                platform.settings.set('cms.content.filters', value);
             };
 
             return `
                 <div class="ot-flex-vertical ot-gap-m ot-p-m">
-                    <e-form-button icon="arrow_back" label="All collections" tone="soft" :stretch="true" :_click="back"></e-form-button>
+                    <e-admin-form-button icon="arrow_back" label="All collections" tone="soft" :stretch="true" :_click="back"></e-admin-form-button>
                     <div class="ot-flex-1 ot-scrollbar">
-                        <e-data-filters :value="state.settings['cms.content.filters']" :_change="change"></e-data-filters>
+                        <e-admin-data-filters :value="state.settings['cms.content.filters']" :_change="change"></e-admin-data-filters>
                     </div>
                 </div>
             `;

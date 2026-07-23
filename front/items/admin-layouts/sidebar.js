@@ -1,4 +1,4 @@
-onetype.AddonReady('ui.layouts', (layouts) =>
+onetype.AddonReady('admin.layouts', (layouts) =>
 {
     layouts.Item({
         id: 'cms-sidebar',
@@ -8,7 +8,7 @@ onetype.AddonReady('ui.layouts', (layouts) =>
             mode: ['content', 'manage'],
             callback: function()
             {
-                return $ot.ui.modes.active()?.Get('id') !== 'content' || !this.cmsCollection;
+                return $ot.admin.modes.active()?.Get('id') !== 'content' || !this.cmsCollection;
             }
         },
         zone: 'root',
@@ -45,10 +45,10 @@ onetype.AddonReady('ui.layouts', (layouts) =>
 
             this.pick = ({ value }) =>
             {
-                value.value && $ot.ui.screens.open('cms.collection', { collection: value.value });
+                value.value && $ot.admin.screens.open('cms.collection', { collection: value.value });
             };
 
-            return `<e-navigation-sidebar title="Collections" :search="true" :items="tree" :active="cmsCollection" :_click="pick"></e-navigation-sidebar>`;
+            return `<e-admin-navigation-sidebar title="Collections" :search="true" :items="tree" :active="cmsCollection" :_click="pick"></e-admin-navigation-sidebar>`;
         }
     });
 });

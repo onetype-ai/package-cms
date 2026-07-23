@@ -30,7 +30,7 @@ elements.ItemAdd({
 
         this.enter = () =>
         {
-            $ot.ui.modes.switch('content');
+            $ot.admin.modes.switch('content');
         };
 
         /* ===== RENDER ===== */
